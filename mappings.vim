@@ -25,10 +25,10 @@ nmap <C-d> <C-d>zz
 nmap <C-u> <C-u>zz
 
 "disable arrow keys
-no <down> ddp
+no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
-no <up> ddkp
+no <up> <Nop>
 
 ino <down> <Esc>
 ino <left> <Esc>
@@ -38,6 +38,9 @@ ino <up> <Esc>
 let mapleader = ","
 nnoremap <silent> <leader>wab :1,9000bwipeout<CR>
 nnoremap <silent> <leader>wtt :set invwrap<CR>
+
+nnoremap <leader>srcw :%s/\<<C-r>=expand('<cword>')<CR>//gc<left><left><left>
+nnoremap <leader>srw :%s//gc<left><left><left>
 
 "MSVC COMPLIATION COMMANDS
 nnoremap <silent><F6> :call RunCppBuildBatch()<CR>
