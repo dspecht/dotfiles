@@ -1,8 +1,7 @@
-"FIXING WINDOWS FUCKING MISTAKE NOW HAVE TO REMAKE THIS. SO FUCKING BS
 set nocompatible
 filetype off
 
-call plug#begin('C:/Vim/vimfiles/plugged')
+call plug#begin('~/.vim/plugged')
 
 if has('if_lua')
     Plug 'Shougo/neocomplete'
@@ -33,6 +32,8 @@ Plug 'junza/Spink'
 call plug#end()
 filetype plugin indent on
 
-source C:/Vim/vimfiles/startup/mappings.vim
-source C:/Vim/vimfiles/startup/settings.vim
-source C:/Vim/vimfiles/startup/functions.vim
+source ~/.vim/startup/mappings.vim
+source ~/.vim/startup/settings.vim
+source ~/.vim/startup/functions.vim
+
+

@@ -4,21 +4,30 @@ set nonumber
 set autoindent
 "set autoread
 set autowrite
-set backspace=indent,eol,start  " make that backspace key work the way it should
+set backspace=indent,eol,start
 colors Spink
 set mousehide
 set incsearch
 set vb t_vb=
+set t_Co=256
+
+if &t_Co > 2 || has('gui running') "if term supports highlighting turn it on
+    syntax on
+    set hlsearch
+endif
+
+set grepprg=ag
+set noesckeys
+set ttimeout
+set ttimeoutlen=1
 
 set nobackup
 set noswapfile
-
 "please make sure you change this file path to something that exists on your system
-set undodir=C:\Vim\undo
+set undodir=~/.vim/undo
 set undofile
 
 set list
-syntax on
 set guifont=Liberation_Mono:h10
 set enc=utf-8
 
@@ -50,11 +59,13 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#theme = 'hybrid'
 
 "NEOCOMPLETE CONFIG
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#sources#syntax#min_keyworld_length = 3
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+if has('if_lua')
+    let g:neocomplete#enable_at_startup = 1
+    let g:neocomplete#enable_smart_case = 1
+    let g:neocomplete#sources#syntax#min_keyworld_length = 3
+    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+endif
 
 "CtrlP CONFIG
 set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*\\tmp\\,*.exe

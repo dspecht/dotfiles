@@ -47,3 +47,31 @@ fun! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfun
+
+
+function! MergeTabs()
+    if tabpagenr() == 1
+        return
+    endif
+    let bufferName = bufname("%")
+    if tabpagenr("$") == tabpagenr()
+        close!
+    else
+        close!
+        tabprev
+    endif
+    split
+    execute "buffer " . bufferName
+endfunction
+nmap <C-w>u :call MergeTabs()<CR>
+
+function! RenameFile() " Thanks to Gary Bernhardt & Ben Orenstein
+    let old_name = expand('%')
+    let new_name = input('New file name: ', expand('%'), 'file')
+    if new_name != '' && new_name != old_name
+        exec ':saveas ' . new_name
+        exec ':silent !rm ' . old_name
+        redraw!
+    endif
+endfunction
+map <Leader>fn :call RenameFile()<cr>
