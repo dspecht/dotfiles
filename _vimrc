@@ -12,7 +12,6 @@ endif
 
 if has('if_python')
     Plug 'scrooloose/nerdtree'
-    Plug 'scrooloose/syntastic'
 endif
 
 "core
@@ -26,8 +25,10 @@ Plug 'xolox/vim-misc'
 Plug 'wikitopian/hardmode'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'scrooloose/syntastic' "Python Required
 
 "colors
+Plug 'morhetz/gruvbox'
 Plug 'junza/Spink'
 
 call plug#end()

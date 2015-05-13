@@ -14,10 +14,6 @@ nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
 
 nnoremap Y y$
 
-"upper or lowercase the current word
-nmap g^ gUiW
-nmap gv guiW
-
 "auto-center on movement commands
 nmap G Gzz
 nmap n nzz
@@ -32,28 +28,24 @@ no <down> <Nop>
 no <left> <Nop>
 no <right> <Nop>
 no <up> <Nop>
-
+"-------------------
 ino <down> <Esc>
 ino <left> <Esc>
 ino <right> <Esc>
 ino <up> <Esc>
 
 let mapleader = ","
-nnoremap <silent> <leader>wab :1,9000bwipeout<CR>
+nnoremap <silent> <leader>wab :1,9000bwipeout<tCR>
 nnoremap <silent> <leader>wtt :set invwrap<CR>
 
 nnoremap <leader>srcw :%s/\<<C-r>=expand('<cword>')<CR>//gc<left><left><left>
 nnoremap <leader>srw :%s//gc<left><left><left>
 
 "MSVC COMPLIATION COMMANDS
-nnoremap <silent><F6> :call RunCppBuildBatch()<CR>
-"nnoremap <silent><F5> :call RunCppExecutable()<CR>
+nnoremap <silent><F5> <ESC>:make<CR>
 
 "QuickFixList Toggle
 nnoremap <Leader>q :call QuickfixToggle()<cr>
-
-"NERDTree MAPPINGS
-nnoremap <Leader>n :NERDTreeToggle<CR>
 
 if has('if_lua')
     "NEOCOMPLETE MAPPINGS

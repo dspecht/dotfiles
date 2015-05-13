@@ -5,24 +5,26 @@ set autoindent
 "set autoread
 set autowrite
 set backspace=indent,eol,start
-colors Spink
 set mousehide
 set incsearch
-set vb t_vb=
+set vb t_vb= "never found a reason why this doesn't work
 set t_Co=256
 
 if &t_Co > 2 || has('gui running') "if term supports highlighting turn it on
     syntax on
     set hlsearch
+    colors gruvbox "this is a 256 color theme
 endif
 
 set grepprg=ag
+set makeprg=build.bat
 set noesckeys
 set ttimeout
 set ttimeoutlen=1
 
 set nobackup
 set noswapfile
+
 "please make sure you change this file path to something that exists on your system
 set undodir=~/.vim/undo
 set undofile
@@ -69,10 +71,9 @@ endif
 
 "CtrlP CONFIG
 set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*\\tmp\\,*.exe
+let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "let g:ctrlp_custom_ignore = {
 	\ 'dir': '\v[\/]\.(git|hg|svn)$',
 	\ 'file': '\v\.(exe|so|dll)$' }
-
-let g:ctrlp_working_path_mode = 'ra'
 
