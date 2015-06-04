@@ -3,17 +3,6 @@ filetype off
 
 call plug#begin('~/.vim/plugged')
 
-if has('if_lua')
-    Plug 'Shougo/neocomplete'
-    Plug 'Shougo/neosnippet.vim'
-    Plug 'Shougo/neosnippet-snippets'
-endif
-
-if has('if_python')
-    Plug 'scrooloose/nerdtree'
-    Plug 'scrooloose/syntastic'
-endif
-
 "core
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
@@ -25,8 +14,10 @@ Plug 'xolox/vim-misc'
 Plug 'wikitopian/hardmode'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-notes'
+Plug 'scrooloose/syntastic'
 
 "colors
+Plug 'morhetz/gruvbox'
 Plug 'junza/Spink'
 
 call plug#end()

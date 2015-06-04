@@ -29,7 +29,7 @@ fun! QuickfixToggle()
 endfun
 
 
-function! MergeTabs()
+fun! MergeTabs()
     if tabpagenr() == 1
         return
     endif
@@ -42,10 +42,10 @@ function! MergeTabs()
     endif
     split
     execute "buffer " . bufferName
-endfunction
+endfun
 nmap <C-w>u :call MergeTabs()<CR>
 
-function! RenameFile() " Thanks to Gary Bernhardt & Ben Orenstein
+fun! RenameFile() " Thanks to Gary Bernhardt & Ben Orenstein
     let old_name = expand('%')
     let new_name = input('New file name: ', expand('%'), 'file')
     if new_name != '' && new_name != old_name
@@ -53,5 +53,24 @@ function! RenameFile() " Thanks to Gary Bernhardt & Ben Orenstein
         exec ':silent !rm ' . old_name
         redraw!
     endif
-endfunction
-map <Leader>fn :call RenameFile()<cr>
+endfun
+
+fun! FindDigitsToChange()
+    let l:digitword=expand("<cword>")
+    let l:wordLength=strlen(digitword)
+    :normal! mm
+    if wordLength < 6
+        let l:extraNeeded = 6 - wordLength
+        let l:extraWord=""
+        while extraNeeded >= 1
+           let l:extraWord = "0" . extraWord
+           let extraNeeded -= 1
+        endwhile
+        let digitword = extraWord . digitword
+        let digitword .= " "
+    endif
+    :normal! dwD`m
+    :put=digitword
+    :normal! $pkgJ
+endfun
+

@@ -12,9 +12,10 @@ set t_Co=256
 
 if &t_Co > 2 || has('gui running') "if term supports highlighting turn it on
     syntax on
-    set hlsearch
+    "set hlsearch
     colors gruvbox "this is a 256 color theme
 endif
+
 
 set grepprg=ag
 set makeprg=build.bat

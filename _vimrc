@@ -3,17 +3,6 @@ set nocompatible
 filetype off
 
 call plug#begin('C:/Vim/vimfiles/plugged')
-
-if has('if_lua')
-    Plug 'Shougo/neocomplete'
-    Plug 'Shougo/neosnippet.vim'
-    Plug 'Shougo/neosnippet-snippets'
-endif
-
-if has('if_python')
-    Plug 'scrooloose/nerdtree'
-endif
-
 "core
 Plug 'rking/ag.vim'
 Plug 'bling/vim-airline'
@@ -21,9 +10,10 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
-Plug 'xolox/vim-misc'
 Plug 'wikitopian/hardmode'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'xolox/vim-misc'
+Plug 'xolox/vim-shell'
 Plug 'xolox/vim-notes'
 Plug 'scrooloose/syntastic' "Python Required
 

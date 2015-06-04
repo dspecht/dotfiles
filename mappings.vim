@@ -41,8 +41,8 @@ nnoremap <silent> <leader>wtt :set invwrap<CR>
 nnoremap <leader>srcw :%s/\<<C-r>=expand('<cword>')<CR>//gc<left><left><left>
 nnoremap <leader>srw :%s//gc<left><left><left>
 
-"MSVC COMPLIATION COMMANDS
 nnoremap <silent><F5> <ESC>:make<CR>
+nnoremap <silent><F2> <ESC>:cd %:p:h<CR>
 
 "QuickFixList Toggle
 nnoremap <Leader>q :call QuickfixToggle()<cr>
