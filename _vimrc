@@ -11,15 +11,17 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'wikitopian/hardmode'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-shell'
-Plug 'xolox/vim-notes'
-Plug 'scrooloose/syntastic' "Python Required
+Plug 'xolox/vim-misc', {'on': 'Note'}
+Plug 'xolox/vim-notes', {'on': 'Note'}
+Plug 'scrooloose/syntastic'
 
 "colors
 Plug 'morhetz/gruvbox'
 Plug 'junza/Spink'
+Plug 'twerth/ir_black'
+
+"Filetype Plugins
+Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 
 call plug#end()
 filetype plugin indent on

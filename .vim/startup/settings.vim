@@ -16,7 +16,6 @@ if &t_Co > 2 || has('gui running') "if term supports highlighting turn it on
     colors gruvbox "this is a 256 color theme
 endif
 
-
 set grepprg=ag
 set makeprg=build.bat
 set noesckeys
@@ -31,12 +30,15 @@ set undodir=~/.vim/undo
 set undofile
 
 set list
-set guifont=Liberation_Mono:h10
+"set guifont=Liberation_Mono:h10
+"Trying Hack out it seems to have more unicode support and it looks decent
+set guifont=Hack:h10
 set enc=utf-8
 
 set history=1000
 set lazyredraw
-set scrolloff=4
+au FocusGained * :redraw!
+set scrolloff=2
 
 highlight colorcolumn guibg=DarkBlue
 call matchadd('colorcolumn', '\%81v.', 100)
@@ -58,23 +60,13 @@ set listchars=tab:▸\ ,eol:¬
 
 "AIRLINE CONFIG
 set laststatus=2
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#theme = 'hybrid'
-
-"NEOCOMPLETE CONFIG
-if has('if_lua')
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-    let g:neocomplete#sources#syntax#min_keyworld_length = 3
-    inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-    inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-endif
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+"let g:airline_theme='jellybeans'
 
 "CtrlP CONFIG
+let g:ctrlp_use_caching = 0
+
 set wildignore+=*/tmp/*,*.o,*.so,*.swp,*.zip,*\\tmp\\,*.exe
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
-"let g:ctrlp_custom_ignore = {
-	\ 'dir': '\v[\/]\.(git|hg|svn)$',
-	\ 'file': '\v\.(exe|so|dll)$' }
-
