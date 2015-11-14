@@ -9,6 +9,11 @@ endfun
 "On all file Types
 autocmd BufWritePre * :call <SID>StripTrailingWhiteSpaces()
 
+fun! s:Sinit(filen)
+	echo expand(a:filen)
+	exec "ScreenShell cd " . expand(a:filen) . "; \\clear"
+endfun
+
 let g:quickfix_is_open = 0
 
 fun! QuickfixToggle()
@@ -22,6 +27,7 @@ fun! QuickfixToggle()
         let g:quickfix_is_open = 1
     endif
 endfun
+
 
 fun! MergeTabs()
     if tabpagenr() == 1
@@ -47,11 +53,6 @@ fun! RenameFile() " Thanks to Gary Bernhardt & Ben Orenstein
         exec ':silent !rm ' . old_name
         redraw!
     endif
-endfun
-
-fun! s:Sinit(filen)
-	echo expand(a:filen)
-	exec "ScreenShell cd " . expand(a:filen) . "; \\clear"
 endfun
 
 fun! FindDigitsToChange()

@@ -21,6 +21,7 @@ Plug 'junza/Spink'
 Plug 'twerth/ir_black'
 
 "Filetype Plugins
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 
 call plug#end()

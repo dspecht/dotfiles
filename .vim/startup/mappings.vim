@@ -6,10 +6,8 @@ nnoremap : ;
 nnoremap v <C-v>
 nnoremap <C-v> v
 
-nnoremap <leader>cn <ESC>:cn<CR>
-nnoremap <leader>cp <ESC>:cp<CR>
-
 nnoremap <C-s> <ESC>:w<CR>
+inoremap <C-s> <ESC>:w<CR>i
 
 nnoremap <expr> k (v:count == 0 ? 'gk' : 'k')
 nnoremap <expr> j (v:count == 0 ? 'gj' : 'j')
@@ -40,15 +38,21 @@ let mapleader = ","
 nnoremap <silent> <leader>wab :1,9000bwipeout<tCR>
 nnoremap <silent> <leader>wtt :set invwrap<CR>
 
-"Linux Only due to windows being weird in gvim
-nnoremap <silent> Q !!sh<CR>
-
 nnoremap <leader>srcw :%s/\<<C-r>=expand('<cword>')<CR>//gc<left><left><left>
 nnoremap <leader>srw :%s//gc<left><left><left>
-nnoremap <leader>ccw :%s/\<C-r>=expand('<cword>')<CR>//gn<CR>
 
-nnoremap <silent><F5> <ESC>:make<CR><CR>
+nnoremap <silent><F5> <ESC>:make<CR>
 nnoremap <silent><F2> <ESC>:cd %:p:h<CR>
 
 "QuickFixList Toggle
 nnoremap <Leader>q :call QuickfixToggle()<cr>
+
+"if has('if_lua')
+"    "NEOCOMPLETE MAPPINGS
+"    inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"    inoremap <expr><C-l> neocomplete#complete_common_string()
+"    "NEOSNIPPIT MAPPINGS
+"    imap <C-k> <Plug>(neosnippet_expand_or_jump)
+"    smap <C-k> <Plug>(neosnippet_expand_or_jump)
+"    xmap <C-k> <Plug>(neosnippet_expand_target)
+"endif
