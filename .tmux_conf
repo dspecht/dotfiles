@@ -1,0 +1,5 @@
+unbind m-b
+set -g prefix C-a
+bind C-a send-prefix
+
+set -g default-terminal "screen-256color"
