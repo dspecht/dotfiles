@@ -1,27 +1,30 @@
-"FIXING WINDOWS FUCKING MISTAKE NOW HAVE TO REMAKE THIS. SO FUCKING BS
+" Dustin Specht (Spector) VimRC
 set nocompatible
 filetype off
 
 call plug#begin('C:/Vim/vimfiles/plugged')
 "core
 Plug 'rking/ag.vim'
-Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'ctrlp/ctrlp.vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'wikitopian/hardmode'
-Plug 'ludovicchabant/vim-gutentags'
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-shell'
+Plug 'xolox/vim-misc', {'on': 'Note'}
 Plug 'xolox/vim-notes', {'on': 'Note'}
 Plug 'scrooloose/syntastic'
+Plug 'vim-pandoc/vim-pandoc', {'for': 'markdown'}
+Plug 'zah/nim.vim', {'for': 'nim'}
 
 "colors
 Plug 'morhetz/gruvbox'
+Plug 'alessandroyorba/alduin'
 Plug 'junza/Spink'
+Plug 'twerth/ir_black'
 
 "Filetype Plugins
+Plug 'vim-pandoc/vim-pandoc-syntax', {'for': 'markdown'}
 Plug 'wlangstroth/vim-racket', {'for': 'racket'}
 
 call plug#end()
